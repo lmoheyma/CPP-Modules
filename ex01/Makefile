@@ -9,14 +9,14 @@ SRCS = src/Contact.cpp \
 INCLUDE = -I inc/
 
 OBJS_BASE = $(SRCS:.cpp=.o)
-
-OBJS = $(addprefix obj/,$(OBJS_BASE))
+OBJ_PATH = obj/
+OBJS = $(addprefix $(OBJ_PATH),$(OBJS_BASE))
 
 NAME = PhoneBook
 
-all: obj $(NAME)
+all: $(OBJ_PATH) $(NAME)
 
-obj :
+$(OBJ_PATH) :
 	mkdir -p obj
 	mkdir -p obj/src
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[0mDone !"
 
-obj/%.o: %.cpp
+$(OBJ_PATH)%.o: %.cpp
 	@printf "\033[0;33mGenerating phonebook objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 

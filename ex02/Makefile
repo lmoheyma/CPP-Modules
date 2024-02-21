@@ -8,25 +8,25 @@ SRCS = src/Account.cpp \
 INCLUDE = -I inc/
 
 OBJS_BASE = $(SRCS:.cpp=.o)
+OBJ_PATH = obj/
+OBJS = $(addprefix $(OBJ_PATH),$(OBJS_BASE))
 
-OBJS = $(addprefix obj/,$(OBJS_BASE))
+NAME = Account
 
-NAME = PhoneBook
+all: $(OBJ_PATH) $(NAME)
 
-all: obj $(NAME)
-
-obj :
+$(OBJ_PATH) :
 	mkdir -p obj
 	mkdir -p obj/src
 
 $(NAME): $(OBJS)
 	@echo "\n"
-	@echo "\033[0;32mCompiling phonebook..."
+	@echo "\033[0;32mCompiling account..."
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[0mDone !"
 
-obj/%.o: %.cpp
-	@printf "\033[0;33mGenerating phonebook objects... %-33.33s\r" $@
+$(OBJ_PATH)%.o: %.cpp
+	@printf "\033[0;33mGenerating account objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
