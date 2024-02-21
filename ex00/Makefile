@@ -1,8 +1,8 @@
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g -std=c++98
 
-SRCS = megaphone.cpp
+SRCS = src/megaphone.cpp
 
 OBJS_BASE = $(SRCS:.cpp=.o)
 
@@ -14,6 +14,7 @@ all: obj $(NAME)
 
 obj :
 	mkdir -p obj
+	mkdir -p obj/src
 
 $(NAME): $(OBJS)
 	@echo "\n"

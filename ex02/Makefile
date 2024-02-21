@@ -2,9 +2,8 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -g -std=c++98
 
-SRCS = src/Contact.cpp \
-		src/PhoneBook.cpp \
-		src/main.cpp
+SRCS = src/Account.cpp \
+		src/tests.cpp
 
 INCLUDE = -I inc/
 
