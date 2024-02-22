@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:15:46 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/21 05:47:34 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:49:57 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	Account::displayAccountsInfos(void)
 	std::cout << "accounts:" << getNbAccounts() << ";";
 	std::cout << "total:" << getTotalAmount() << ";";
 	std::cout << "deposits:" << getNbDeposits() << ";";
-	std::cout << "withdrawals:" << getNbWithdrawals() << ";";
+	std::cout << "withdrawals:" << getNbWithdrawals();
 	std::cout << std::endl;
 }
 
