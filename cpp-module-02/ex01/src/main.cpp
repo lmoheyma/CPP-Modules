@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 19:38:04 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/24 16:18:12 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/24 18:22:11 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int main( void ) {
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
+	std::cout << "\033[1m\033[37ma is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-return 0;
+	std::cout << "d is " << d.toInt() << " as integer\033[0m" << std::endl;
+	return 0;
 }
