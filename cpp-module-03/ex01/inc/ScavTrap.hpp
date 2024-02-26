@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:48:30 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/26 17:16:58 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:04:48 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@
 
 class ScavTrap : ClapTrap
 {
-	private:
-		std::string _name;
-		unsigned int hitPoints;
-		unsigned int energyPoints;
-		unsigned int attackDamage;
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);
