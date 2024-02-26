@@ -4,7 +4,8 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = src/main.cpp \
 		src/ClapTrap.cpp \
-		src/ScavTrap.cpp
+		src/ScavTrap.cpp \
+		src/FragTrap.cpp
 
 INCLUDE = -I inc/
 
@@ -12,7 +13,7 @@ OBJS_BASE = $(SRCS:.cpp=.o)
 OBJ_PATH = obj/
 OBJS = $(addprefix $(OBJ_PATH),$(OBJS_BASE))
 
-NAME = ScavTrap
+NAME = FragTrap
 
 all: $(OBJ_PATH) $(NAME)
 
@@ -22,12 +23,12 @@ $(OBJ_PATH) :
 
 $(NAME): $(OBJS)
 	@echo "\n"
-	@echo "\033[1m\033[32mCompiling claptrap ..."
+	@echo "\033[1m\033[32mCompiling fragtrap ..."
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[1m\033[35mDone !"
 
 $(OBJ_PATH)%.o: %.cpp
-	@printf "\033[0;33mGenerating claptrap objects... %-33.33s\r" $@
+	@printf "\033[0;33mGenerating fragtrap objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
