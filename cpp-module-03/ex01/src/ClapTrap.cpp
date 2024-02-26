@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:40:28 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/26 17:14:31 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:26:48 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	}
 	return (*this);
 }
-
 
 unsigned int ClapTrap::getHitPoints(void) const
 {

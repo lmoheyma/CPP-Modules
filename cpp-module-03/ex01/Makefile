@@ -22,12 +22,12 @@ $(OBJ_PATH) :
 
 $(NAME): $(OBJS)
 	@echo "\n"
-	@echo "\033[1m\033[32mCompiling claptrap ..."
+	@echo "\033[1m\033[32mCompiling scavtrap ..."
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[1m\033[35mDone !"
 
 $(OBJ_PATH)%.o: %.cpp
-	@printf "\033[0;33mGenerating claptrap objects... %-33.33s\r" $@
+	@printf "\033[0;33mGenerating scavtrap objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
