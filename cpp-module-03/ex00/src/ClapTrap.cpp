@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 14:40:28 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/26 16:46:27 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:21:51 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "\033[1m\033[33mDefault constructor called\033[0m" << std::endl; 
+	std::cout << "\033[1m\033[33mClapTrap Default constructor called\033[0m" << std::endl; 
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "\033[1m\033[33mName constructor called\033[0m" << std::endl; 
+	std::cout << "\033[1m\033[33mClapTrap Name constructor called\033[0m" << std::endl; 
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "\033[1m\033[33mCopy constructor called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[33mClapTrap Copy constructor called\033[0m" << std::endl;
 	hitPoints = other.getHitPoints();
 	energyPoints = other.getEnergyPoints();
 	attackDamage = other.getAttackDamage();
@@ -41,12 +41,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\033[1m\033[31mDestructor called\033[0m" << std::endl; 
+	std::cout << "\033[1m\033[31mClapTrap Destructor called\033[0m" << std::endl; 
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "\033[1m\033[36mCopy assignment operator called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[36mClapTrap Copy assignment operator called\033[0m" << std::endl;
 	if (this != &other)
 	{
 		hitPoints = other.getHitPoints();
@@ -109,7 +109,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
-		hitPoints--;
+		hitPoints-=amount;
 		std::cout << "ClapTrap " << _name << " took " << amount << " damages !" << std::endl;
 	}
 		
