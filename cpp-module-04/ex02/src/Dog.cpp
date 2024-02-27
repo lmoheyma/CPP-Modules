@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:38:05 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 18:51:17 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/28 00:14:55 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::~Dog()
 	std::cout << "\033[1m\033[31mDog destructor called\033[0m" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : AAnimal(other)
 {
 	std::cout << "\033[1m\033[33mDog copy constructor called\033[0m" << std::endl;
 	_type = other._type;

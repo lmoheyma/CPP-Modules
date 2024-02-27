@@ -17,7 +17,7 @@ OBJS_BASE = $(SRCS:.cpp=.o)
 OBJ_PATH = obj/
 OBJS = $(addprefix $(OBJ_PATH),$(OBJS_BASE))
 
-NAME = Brain
+NAME = AAnimal
 
 all: $(OBJ_PATH) $(NAME)
 
@@ -27,12 +27,12 @@ $(OBJ_PATH) :
 
 $(NAME): $(OBJS)
 	@echo "\n"
-	@echo "\033[1m\033[32mCompiling brain ..."
+	@echo "\033[1m\033[32mCompiling aanimal ..."
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[1m\033[35mDone !"
 
 $(OBJ_PATH)%.o: %.cpp
-	@printf "\033[0;33mGenerating brain objects... %-33.33s\r" $@
+	@printf "\033[0;33mGenerating aanimal objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
