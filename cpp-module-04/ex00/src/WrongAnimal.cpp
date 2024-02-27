@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:27:39 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 17:07:17 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:43:57 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
-	std::cout << "\033[1m\033[33mWrongAnimal copy constructor called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[35mWrongAnimal copy constructor called\033[0m" << std::endl;
 	_type = other._type;
 }
 

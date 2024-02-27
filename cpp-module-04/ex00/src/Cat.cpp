@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:20:37 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 16:18:58 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:43:38 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Cat::~Cat()
 	std::cout << "\033[1m\033[31mCat destructor called\033[0m" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
-	std::cout << "\033[1m\033[33mCat copy constructor called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[35mCat copy constructor called\033[0m" << std::endl;
 	_type = other._type;
 }
 
