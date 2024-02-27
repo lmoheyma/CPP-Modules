@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:27:36 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 17:06:57 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:43:22 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ WrongCat::~WrongCat()
 	std::cout << "\033[1m\033[31mWrongCat destructor called\033[0m" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
-	std::cout << "\033[1m\033[33mWrongCat copy constructor called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[35mWrongCat copy constructor called\033[0m" << std::endl;
 	_type = other._type;
 }
 

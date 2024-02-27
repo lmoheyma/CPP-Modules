@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:14:36 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 16:20:45 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/27 23:42:43 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal &other)
 {
-	std::cout << "\033[1m\033[33mAnimal copy constructor called\033[0m" << std::endl;
+	std::cout << "\033[1m\033[35mAnimal copy constructor called\033[0m" << std::endl;
 	_type = other._type;
 }
 
