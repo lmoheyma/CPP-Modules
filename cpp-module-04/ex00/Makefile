@@ -5,7 +5,9 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = src/main.cpp \
 		src/Animal.cpp \
 		src/Dog.cpp \
-		src/Cat.cpp
+		src/Cat.cpp \
+		src/WrongAnimal.cpp \
+		src/WrongCat.cpp
 
 INCLUDE = -I inc/
 
