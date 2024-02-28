@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:11:07 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/27 18:57:45 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/02/28 21:35:37 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AAnimal
 		virtual ~AAnimal();
 		AAnimal &operator=(const AAnimal &other);
 		std::string getType(void) const ;
-		virtual void makeSound(void) const ;
+		virtual void makeSound(void) const = 0;
 };
 
 #endif
