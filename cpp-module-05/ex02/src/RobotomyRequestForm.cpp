@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:30:35 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/04 19:16:48 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:18:06 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm(), _target("Default")
 	std::cout << "\033[1m\033[33mRobotomyRequestForm default constructor called\033[0m" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Default", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout << "\033[1m\033[33mRobotomyRequestForm target constructor called\033[0m" << std::endl;
 }

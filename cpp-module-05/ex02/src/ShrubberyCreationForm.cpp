@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:30:37 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/04 18:54:25 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:18:13 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm(), _target("Default")
 	std::cout << "\033[1m\033[33mShrubberyCreationForm default constructor called\033[0m" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Default", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout << "\033[1m\033[33mShrubberyCreationForm target constructor called\033[0m" << std::endl;
 }
