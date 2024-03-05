@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:42:24 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/05 17:08:18 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:22:31 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ class Intern
 		~Intern();
 		Intern &operator=(const Intern &other);
 		AForm* makeForm(std::string name, std::string target);
-		// static AForm* robotomy(std::string target);
-		// static AForm* shrubbery(std::string target);
-		// static AForm* presidential(std::string target);
 };
 
 typedef AForm* (*pf)(std::string target);
