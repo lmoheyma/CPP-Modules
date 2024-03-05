@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:44:57 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/02/29 21:39:43 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:26:28 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat const &f)
 {
-	os << f.getName() << ", bureaucrat grade " << f.getGrade() << ".";
+	os << "\033[1m\033[37m" << f.getName() << ", bureaucrat grade " << f.getGrade() << ".\033[0m";
 	return (os);
 }
 
