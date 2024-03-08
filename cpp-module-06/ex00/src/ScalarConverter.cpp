@@ -6,17 +6,23 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:49:14 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/08 22:24:56 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:47:18 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-std::string ScalarConverter::setType(std::string str)
+void ScalarConverter::convert(std::string str)
 {
+	std::string type = "int";
 	int i = 0;
 	int flag = 0;
-	std::string type = "int";
+	char charValue = '\0';
+	long int intValue = 0;
+	float floatValue = 0.0f;
+	double doubleValue = 0.0;
+	int limits = 0;
+	int overflow = 0;
 	
 	if (str[i] == '-' || str[i] == '+')
 		i++;
@@ -50,18 +56,6 @@ std::string ScalarConverter::setType(std::string str)
 			break ;
 		}
 	}
-	return (type);
-}
-
-void ScalarConverter::convert(std::string str, std::string type)
-{
-	char charValue = '\0';
-	int intValue = 0;
-	float floatValue = 0.0f;
-	double doubleValue = 0.0;
-	int limits = 0;
-	int overflow = 0;
-	
 	if (!type.compare("int") && (str[0] == '+' || str[0] == '-') && str.length() == 1)
 	{
 		intValue = static_cast<int>(str[0]);;
@@ -71,18 +65,11 @@ void ScalarConverter::convert(std::string str, std::string type)
 	}
 	else if (!type.compare("int"))
 	{
-		try
-		{
-			intValue = std::atol(str.c_str());
-			if (intValue > std::numeric_limits<int>::max())
-				throw ImpossibleConversionException();
-			if (intValue < std::numeric_limits<int>::min())
-				throw ImpossibleConversionException();
-		}
-		catch(const std::exception& e)
-		{
+		intValue = std::atol(str.c_str());
+		if (intValue > std::numeric_limits<int>::max())
 			overflow = 1;
-		}
+		if (intValue < std::numeric_limits<int>::min())
+			overflow = 1;
 		charValue = static_cast<char>(intValue);
 		floatValue = static_cast<float>(intValue);
 		doubleValue = static_cast<double>(intValue);
@@ -117,7 +104,7 @@ void ScalarConverter::convert(std::string str, std::string type)
 			doubleValue = std::numeric_limits<double>::infinity() * -1;
 			limits = 1;
 		}
-		else if (!str.compare("inff") || !str.compare("inf"))
+		else if (!str.compare("+inff") || !str.compare("+inf"))
 		{
 			charValue = 127;
 			floatValue = std::numeric_limits<float>::infinity();
@@ -126,7 +113,7 @@ void ScalarConverter::convert(std::string str, std::string type)
 		}
 		else
 		{
-			throw ImpossibleConversionException();
+			std::cout << "\033[1m\033[31mImpossible conversion!\033[0m" << std::endl;
 			return ;
 		}
 	}
@@ -142,7 +129,7 @@ void ScalarConverter::convert(std::string str, std::string type)
 		if (charValue < 33)
 			std::cout << "\033[1m\033[37mChar: \033[1m\033[31mNon displayable\033[0m" << std::endl;
 		else
-			std::cout << "\033[1m\033[37mChar: \033[1m\033[32m" << charValue << "\033[0m" << std::endl;
+			std::cout << "\033[1m\033[37mChar: \033[1m\033[32m'" << charValue << "'\033[0m" << std::endl;
 		if (overflow)
 			std::cout << "\033[1m\033[37mInt: \033[1m\033[31mOverflow\033[0m" << std::endl;
 		else

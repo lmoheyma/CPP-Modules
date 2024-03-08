@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:49:12 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/08 22:06:13 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/08 22:43:14 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@
 class ScalarConverter
 {
 	public:
-		static std::string setType(std::string str);
-		static void convert(std::string str, std::string type);
-		class ImpossibleConversionException : public std::exception{
-			public:
-				const char* what() const throw () { return ("Impossible conversion!");}};
+		static void convert(std::string str);
 };
 
 #endif
