@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 00:57:08 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/09 01:18:34 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/09 01:52:50 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main(void)
     identify(base);
     std::cout << "\033[1m\033[33mIdentify with reference, dynamic cast and exceptions : " << std::endl;
     identify(*base);
+    delete base;
     return (0);
 }
