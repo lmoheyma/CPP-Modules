@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 05:58:10 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/11 06:15:21 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/11 16:20:01 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ int main(void)
     try
     {
         int found = easyfind(intVector, 13);
+        if (found)
+            std::cout << "\033[1m\033[32mInteger found!\033[0m" << std::endl;
+        else
+            throw NotFoundException();
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        int found = easyfind(intVector, 130);
         if (found)
             std::cout << "\033[1m\033[32mInteger found!\033[0m" << std::endl;
         else
