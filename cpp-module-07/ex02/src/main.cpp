@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/12 19:23:22 by lmoheyma          #+#    #+#             */
+/*   Updated: 2024/03/12 19:24:04 by lmoheyma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <Array.hpp>
 
 #define MAX_VAL 750
 int main(int, char**)
 {
-    Array<int> numbers(750);
+    Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
-    int * a = new int();
-    std::cout << *a << std::endl;
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
