@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 04:24:44 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/11 01:27:34 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/12 02:27:38 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Array
 {
     private:
         T *_array;
-        int _array_size;
+        unsigned int _array_size;
     public:
         Array()
         {
@@ -31,7 +31,7 @@ class Array
             _array_size = 0;
             std::cout << "\033[1m\033[33mArray default constructor called\033[0m" << std::endl;
         }
-        Array(int n) : _array(new T[n]()), _array_size(n)
+        Array(unsigned int n) : _array(new T[n]()), _array_size(n)
         {
             std::cout << "\033[1m\033[33mArray size default constructor called\033[0m" << std::endl;
         }
@@ -40,7 +40,7 @@ class Array
             std::cout << "\033[1m\033[35mArray copy constructor called\033[0m" << std::endl;
             _array = new T[other._array_size]();
             _array_size = other._array_size;
-            for (int i = 0; i < other._array_size; i++)
+            for (unsigned int i = 0; i < other._array_size; i++)
                 _array[i] = other._array[i];
         }
         Array<T>& operator=(const Array<T> &other)
@@ -51,14 +51,14 @@ class Array
                 delete [] _array;
                 _array = new T[other._array_size]();
                 _array_size = other._array_size;
-                for (int i = 0; i < other._array_size; i++)
+                for (unsigned int i = 0; i < other._array_size; i++)
                     _array[i] = other._array[i];
             }
             return (*this);
         }
-        T& operator[](int n)
+        T& operator[](unsigned int n)
         {
-            if (n < 0 || n >= _array_size)
+            if (n >= _array_size)
                 throw OutOfBoudsException();
             return _array[n];
         }
@@ -67,7 +67,7 @@ class Array
             delete [] _array;
             std::cout << "\033[1m\033[31mArray destructor called\033[0m" << std::endl;
         }
-        int size(void) const
+        unsigned int size(void) const
         {
             return (_array_size);
         }
