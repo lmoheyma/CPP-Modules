@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 00:40:25 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/14 01:25:38 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/14 18:50:38 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,31 @@ void BitcoinExchange::fillMap(void)
             _btcMap.insert(std::pair<std::string, float>(date, value));
         }
     }
-    data.close();
+    data.close(); 
+}
 
-    std::map<std::string, float>::iterator it;
-    for (it = _btcMap.begin(); it != _btcMap.end(); it++)
-    {
-        std::cout << "Date = " << it->first << "   -----   Value: " << it->second << std::endl;
-    }
+std::map<std::string, float> BitcoinExchange::getMap(void) const
+{
+    return (_btcMap);
+}
+
+int BitcoinExchange::isValidDate(std::string date)
+{
+    std::string year;
+    std::string month;
+    std::string day;
+
+    year = date.substr(0, 4);
+    month = date.substr(5, 2);
+    day = date.substr(8, 10);
+    // std::cout << "Year : " << year << "   Month : " << month << "    Day : " << day << std::endl;
+    if (year.compare("2024") > 0 || year.compare("2009") < 0 )
+        return (std::cout << "Error: bad input => " << date << std::endl, 0);
+    else if (month.compare("01") < 0 || month.compare("12") > 0)
+        return (std::cout << "Error: bad input => " << date << std::endl, 0);
+    else if (day.compare("01") < 0 || day.compare("12") > 0)
+        return (std::cout << "Error: bad input => " << date << std::endl, 0);
+    else
+        return (1);
 }
 
