@@ -6,7 +6,7 @@
 /*   By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 00:40:25 by lmoheyma          #+#    #+#             */
-/*   Updated: 2024/03/14 18:50:38 by lmoheyma         ###   ########.fr       */
+/*   Updated: 2024/03/15 05:22:41 by lmoheyma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,12 @@ int BitcoinExchange::isValidDate(std::string date)
     year = date.substr(0, 4);
     month = date.substr(5, 2);
     day = date.substr(8, 10);
-    // std::cout << "Year : " << year << "   Month : " << month << "    Day : " << day << std::endl;
     if (year.compare("2024") > 0 || year.compare("2009") < 0 )
         return (std::cout << "Error: bad input => " << date << std::endl, 0);
     else if (month.compare("01") < 0 || month.compare("12") > 0)
         return (std::cout << "Error: bad input => " << date << std::endl, 0);
-    else if (day.compare("01") < 0 || day.compare("12") > 0)
+    else if (day.compare("01") < 0 || day.compare("31") > 0)
         return (std::cout << "Error: bad input => " << date << std::endl, 0);
     else
         return (1);
 }
-

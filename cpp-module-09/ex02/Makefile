@@ -3,7 +3,7 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = src/main.cpp \
-		src/RPN.cpp
+		src/PmergeMe.cpp
 
 INCLUDE = -I inc/
 
@@ -11,7 +11,7 @@ OBJS_BASE = $(SRCS:.cpp=.o)
 OBJ_PATH = obj/
 OBJS = $(addprefix $(OBJ_PATH),$(OBJS_BASE))
 
-NAME = RPN
+NAME = PmergeMe
 
 all: $(OBJ_PATH) $(NAME)
 
@@ -21,12 +21,12 @@ $(OBJ_PATH) :
 
 $(NAME): $(OBJS)
 	@echo "\n"
-	@echo "\033[1m\033[32mCompiling rpn..."
+	@echo "\033[1m\033[32mCompiling pmergeme..."
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 	@echo "\n\033[1m\033[35mDone !"
 
 $(OBJ_PATH)%.o: %.cpp
-	@printf "\033[0;33mGenerating rpn objects... %-33.33s\r" $@
+	@printf "\033[0;33mGenerating pmergeme objects... %-33.33s\r" $@
 	$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
