@@ -51,6 +51,8 @@
         "ranges": "cpp",
         "span": "cpp",
         "sstream": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "list": "cpp"
     }
 }
